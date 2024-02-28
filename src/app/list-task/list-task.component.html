@@ -1,0 +1,13 @@
+<ul>
+    <li *ngFor="let tarefa of tarefas">
+      {{ tarefa.titulo }}
+      <button (click)="removerTarefa(tarefa.id)">Excluir</button>
+    </li>
+  </ul>
+
+  <ul>
+    <li *ngFor="let tarefa of tarefas">
+      <input type="checkbox" [(ngModel)]="tarefa.concluida" (change)="atualizarTarefa(tarefa)">
+      <span [ngClass]="{'concluida': tarefa.concluida}">{{ tarefa.titulo }}</span>
+    </li>
+  </ul>

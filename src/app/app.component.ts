@@ -9,5 +9,14 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'project';
+  title = 'This is a title for my Application';
+  newTitle = '';
+
+  setNewTitle(event: Event){
+    this.newTitle = (<HTMLInputElement>event.target).value;
+  }
+
+  changeTitle(){
+    this.title = this.newTitle;
+  }
 }
